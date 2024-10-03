@@ -1,0 +1,7 @@
+fastapi[standard]
+transformers
+tensorflow
+pandas
+numpy
+uvicorn[standard]
+tf-keras
