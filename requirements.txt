@@ -1,7 +1,12 @@
 fastapi[standard]
+uvicorn[standard]
+
 transformers
 tensorflow
 pandas
 numpy
-uvicorn[standard]
 tf-keras
+
+pytest
+pylint
+black

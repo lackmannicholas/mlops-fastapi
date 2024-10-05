@@ -1,0 +1,36 @@
+name: build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+
+    - name: Format
+      run: |
+        make format
+    
+    - name: lint
+      run: |
+        make lint
+
+    - name: Unit Tests
+      run: |
+        make test
+
+    # - name: Verify that the Docker image for the action builds
+    #   run: docker build . --file Dockerfile

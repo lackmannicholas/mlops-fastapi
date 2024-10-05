@@ -9,9 +9,10 @@ test:
 	python -m pytest
 
 lint:
-	pylint
+	pylint -rn api
 
-refactor: format lint
+format: 
+	black api/*.py
 
 venv:
 	python -m venv .venv &&\
