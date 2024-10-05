@@ -15,7 +15,7 @@ def read_root():
 
 @app.post("/generate")
 def generate_text(body: Body):
-    result = generator(body.text, max_length=35, num_return_sequences=1)
+    result = generator(body.text, max_length=35, num_return_sequences=1, truncation=True)
     return result[0]
 
 @app.get("/items/{item_id}")
