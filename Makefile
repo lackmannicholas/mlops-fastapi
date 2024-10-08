@@ -2,17 +2,17 @@ install:
 	pip install --upgrade pip &&\
 		pip install -r requirements.txt
 
-run: 
-	fastapi dev api/app.py
+api: 
+	fastapi dev api/main.py
 
 test:
 	python -m pytest
 
 lint:
-	pylint -rn api
+	pylint -rn .
 
 format: 
-	black api/*.py
+	black .
 
 venv:
 	python -m venv .venv &&\
