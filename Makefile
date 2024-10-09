@@ -2,8 +2,8 @@ install:
 	pip install --upgrade pip &&\
 		pip install -r requirements.txt
 
-api: 
-	fastapi dev routers/main.py
+dev: 
+	fastapi dev app.py
 
 test:
 	python -m pytest
