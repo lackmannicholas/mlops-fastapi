@@ -1,4 +1,6 @@
-"""Generate text based off of a short string"""
+"""
+Health Check Routes
+"""
 
 from fastapi import APIRouter
 from routers import nlp, image

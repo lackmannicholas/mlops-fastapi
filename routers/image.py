@@ -1,5 +1,5 @@
 """
-GPT2 Text Generator
+Image Related Routes
 """
 
 from fastapi import Depends, HTTPException, APIRouter, FastAPI
