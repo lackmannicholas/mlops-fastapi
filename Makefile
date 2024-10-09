@@ -3,13 +3,13 @@ install:
 		pip install -r requirements.txt
 
 api: 
-	fastapi dev api/main.py
+	fastapi dev routers/main.py
 
 test:
 	python -m pytest
 
 lint:
-	pylint -rn .
+	pylint -rn *.py
 
 format: 
 	black .

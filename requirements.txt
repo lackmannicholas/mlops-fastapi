@@ -7,6 +7,8 @@ pandas
 numpy
 tf-keras
 
+dependency-injector
+
 pytest
 pylint
 black
