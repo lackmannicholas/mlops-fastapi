@@ -7,8 +7,11 @@ pandas
 numpy
 tf-keras
 
+matplotlib
+
 dependency-injector
 
 pytest
 pylint
 black
+ipython
