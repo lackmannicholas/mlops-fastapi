@@ -3,6 +3,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from routers import nlp, image, healthcheck
+import config
 
 app = FastAPI()
 
@@ -19,3 +20,5 @@ app.add_middleware(
 app.include_router(healthcheck.router)
 app.include_router(image.router)
 app.include_router(nlp.router)
+
+app.config = config
