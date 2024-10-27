@@ -21,8 +21,7 @@ generator = TextGenerator(nlp_model)
 @router.post("/generate")
 def generate_text(request: Request, body: Body, authorization: HTTPAuthorizationCredentials = Depends(security)):
     """Generate text based off of a short string"""
-    
-    return generator.generate_text(request.text)
+    return generator.generate_text(body.text)
     
 @router.post("/summerize")
 def generate_text(request: Body):
