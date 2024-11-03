@@ -7,7 +7,9 @@ from starlette.requests import Request
 from config import secret_token
 
 class CustomHTTPBearer(HTTPBearer):
-    async def __call__(self, request: Request) -> Optional[HTTPAuthorizationCredentials]:
+    async def __call__(
+        self, request: Request
+    ) -> Optional[HTTPAuthorizationCredentials]:
         auth_header = request.headers.get("Authorization") or request.headers.get(
             "X-Internal-Authorization"
         )

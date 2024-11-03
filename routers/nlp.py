@@ -9,17 +9,19 @@ from config import nlp_model
 from models.requests import Body
 from auth.bearer import CustomHTTPBearer
 
-router = APIRouter(
-    prefix="/nlp",
-    tags=["NLP"]
-)
+router = APIRouter(prefix="/nlp", tags=["NLP"])
 
 security = CustomHTTPBearer()
 
 generator = TextGenerator(nlp_model)
 
+
 @router.post("/generate")
-def generate_text(request: Request, body: Body, authorization: HTTPAuthorizationCredentials = Depends(security)):
+def generate_text(
+    request: Request,
+    body: Body,
+    authorization: HTTPAuthorizationCredentials = Depends(security),
+):
     """Generate text based off of a short string"""
     return generator.generate_text(body.text)
     

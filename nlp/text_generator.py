@@ -9,7 +9,7 @@ class TextGenerator:
     def generate_text(self, text: str = "", num_sentences: int = 10):
         """Generate text based off of a short string"""
 
-        if(text == ""):
+        if text == "":
             raise ValueError("text is empty. Value is required.")
 
         result = self.generator(
