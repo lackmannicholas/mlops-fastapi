@@ -24,7 +24,8 @@ def generate_text(
 ):
     """Generate text based off of a short string"""
     return generator.generate_text(body.text)
-    
+
+
 @router.post("/summerize")
 def generate_text(request: Body):
     """Summerize text"""

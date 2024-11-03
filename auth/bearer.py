@@ -6,6 +6,7 @@ from fastapi.security.utils import get_authorization_scheme_param
 from starlette.requests import Request
 from config import secret_token
 
+
 class CustomHTTPBearer(HTTPBearer):
     async def __call__(
         self, request: Request
@@ -21,8 +22,10 @@ class CustomHTTPBearer(HTTPBearer):
             )
             raise HTTPException(status_code=401, detail=error_message)
 
-        if(auth_header == secret_token):
-            return HTTPAuthorizationCredentials(scheme='Bearer', credentials=auth_header)
+        if auth_header == secret_token:
+            return HTTPAuthorizationCredentials(
+                scheme="Bearer", credentials=auth_header
+            )
         else:
             error_message = (
                 f"Failed to authenticate with improperly formatted auth header "
