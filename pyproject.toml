@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mlops-fastapi"
+dynamic = ["version"]
+requires-python = ">= 3.11"
+authors = [
+  {name = "Nick Lackman", email = "lackmannicholas@gmail.com"}
+]
+description = "Pratice wrapper for ml/ai cli and api"
+readme = "README.md"
+license = {file = "LICENSE"}
+keywords = ["mlops", "ml ops"]
+
+[project.optional-dependencies]
+cli = [
+  "click",
+]
+
+[project.scripts]
+mlops-cli = "cli.main:cli"
+mlops-api = "main:main"
