@@ -12,6 +12,8 @@ matplotlib
 dependency-injector
 
 pytest
+pytest-mock
+pytest-cov
 pylint
 black
 ipython
