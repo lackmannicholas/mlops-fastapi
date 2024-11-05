@@ -5,6 +5,14 @@ install:
 dev: 
 	fastapi dev app.py
 
+docker-build:
+	docker build -t mlops-fastapi:latest .
+
+docker-run:
+	docker stop mlops-fastapi
+	docker rm mlops-fastapi
+	docker run --name mlops-fastapi -p 8000:8000 mlops-fastapi
+
 test:
 	python -m pytest -v --cov=nlp
 
